@@ -5,17 +5,12 @@ setInterval(() => {
         if (d.classList.contains('reveal')) {
             const { top, bottom } = d.getBoundingClientRect()
             console.log(top, bottom, window.innerHeight)
-            // console.log()
-            if (bottom < 0) {
-                d.classList.remove('reveal_active')
-            }
-            else if (top > window.innerHeight) {
+            if (bottom < 0 || top > window.innerHeight) {
                 d.classList.remove('reveal_active')
             }
             else {
                 d.classList.add('reveal_active')
             }
-
         }
     })
 }
